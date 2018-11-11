@@ -1,0 +1,40 @@
+<form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+    <h5 *ngIf="success"></h5>
+  
+    <label>
+      <h2>Register</h2>
+
+      First Name:
+      <input type="text" formControlName="firstname">
+      <div *ngIf="submitted && messageForm.controls.firstname.errors" class="error">
+        <div *ngIf="messageForm.controls.firstname.errors.required">First name is required</div>
+      </div>
+  
+      Last Name:
+      <input type="text" formControlName="lastname">
+      <div *ngIf="submitted && messageForm.controls.lastname.errors" class="error">
+        <div *ngIf="messageForm.controls.lastname.errors.required">Last Name is required</div>
+      </div>
+      Username:
+      <input type="text" formControlName="username">
+      <div *ngIf="submitted && messageForm.controls.username.errors" class="error">
+        <div *ngIf="messageForm.controls.username.errors.required">Username is required</div>
+      </div>
+  
+      Password:
+      <input type="text" formControlName="password">
+      <div *ngIf="submitted && messageForm.controls.password.errors" class="error">
+        <div *ngIf="messageForm.controls.password.errors.required">Password is required</div>
+      </div>
+  
+      <input type="submit" value="Register" class="Register"> 
+      <input type="button" value="Cancel" class="cancelRegister" routerLink="/">
+    </label>
+  
+  
+  
+  
+  
+  </form>
+  
+  
